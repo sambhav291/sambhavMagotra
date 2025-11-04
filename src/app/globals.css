@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background: linear-gradient(to bottom, #000000 0%, #0a0a0f 50%, #000000 100%);
+    color: #ffffff;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space-grotesk), ui-sans-serif, system-ui;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  code, pre {
+    font-family: var(--font-jetbrains-mono), monospace;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .gradient-text {
+    background-image: linear-gradient(90deg, #fb923c, #ef4444 50%, #a855f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .card-glass {
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 40px rgba(251, 146, 60, 0.3);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.3);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.3);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #fb923c, #ef4444, #a855f7);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #f97316, #dc2626, #9333ea);
 }
