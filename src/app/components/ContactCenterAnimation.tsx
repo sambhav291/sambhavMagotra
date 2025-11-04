@@ -86,17 +86,14 @@ function AnimatedOrb() {
 
 export default function ContactCenterAnimation() {
   return (
-    <div className="w-full h-[400px] relative rounded-lg overflow-hidden">
+    <div className="w-full h-[400px] relative rounded-lg overflow-hidden z-0">
       {/* Fade borders to blend with background stars */}
       <div className="absolute inset-0 pointer-events-none z-20">
         <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black via-black/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-transparent via-transparent to-transparent"></div>
         <div className="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-black via-black/50 to-transparent"></div>
         <div className="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-black via-black/50 to-transparent"></div>
       </div>
-
-      {/* Purple gradient overlay above animation */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-purple-600 to-transparent pointer-events-none z-30" />
 
       <Canvas camera={{ position: [0, 0, 8], fov: 50 }} style={{ background: 'transparent' }}>
         <ambientLight intensity={0.3} />

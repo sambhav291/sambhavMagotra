@@ -106,7 +106,6 @@ const PROJECTS: Project[] = [
     ],
     color: "#f59e0b",
     impact: "Production deployment",
-    image: "/projects/phonepe.png",
   },
 ];
 

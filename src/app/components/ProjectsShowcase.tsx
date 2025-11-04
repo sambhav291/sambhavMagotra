@@ -74,24 +74,22 @@ export default function ProjectsShowcase() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
                   </div>
-                ) : project.id === "phonepe-integration" ? (
-                  <div className="relative w-full h-48 rounded-lg overflow-hidden bg-black/40 border border-white/10 group-hover:border-white/20 transition-all flex items-center justify-center">
-                    <div className="flex flex-col items-center justify-center w-full h-full">
-                      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="32" cy="32" r="32" fill="#f59e0b" fillOpacity="0.2" />
-                        <path d="M20 32c0-6.627 5.373-12 12-12s12 5.373 12 12-5.373 12-12 12-12-5.373-12-12zm12-8a8 8 0 100 16 8 8 0 000-16z" fill="#f59e0b" />
-                        <rect x="28" y="28" width="8" height="8" rx="2" fill="#fff" fillOpacity="0.7" />
-                      </svg>
-                      <div className="mt-2 text-sm text-yellow-400 font-semibold">PhonePe Integration</div>
-                      <div className="text-xs text-yellow-200 opacity-70">Payment Gateway Placeholder</div>
-                    </div>
-                  </div>
                 ) : (
-                  <div className="relative w-full h-48 rounded-lg overflow-hidden bg-black/40 border border-white/10 group-hover:border-white/20 transition-all">
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                      <div className="text-center space-y-2">
-                        <div className="text-sm opacity-60">Project Preview</div>
-                        <div className="text-xs opacity-40">Internal Project</div>
+                  <div 
+                    className="relative w-full h-48 rounded-lg overflow-hidden border border-white/10 group-hover:border-white/20 transition-all flex items-center justify-center"
+                    style={{
+                      background: `linear-gradient(135deg, ${project.color}08 0%, ${project.color}15 50%, #1f1f1f 100%)`
+                    }}
+                  >
+                    <div className="text-center">
+                      <div 
+                        className="text-6xl font-light opacity-15 tracking-wider"
+                        style={{ 
+                          color: project.color,
+                          fontFamily: 'Georgia, serif'
+                        }}
+                      >
+                        {project.title.charAt(0)}
                       </div>
                     </div>
                   </div>

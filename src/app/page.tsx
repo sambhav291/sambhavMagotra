@@ -133,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen py-24 relative bg-gradient-to-b from-black to-purple-900/20">
+      <section id="contact" className="min-h-screen py-24 relative bg-gradient-to-b from-black to-purple-900/20 z-20">
         {/* Star Field Background */}
         <StarField density={200} speed={0.4} />
         
